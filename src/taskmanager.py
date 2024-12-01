@@ -1,20 +1,22 @@
 import argparse
 
+from src import crud
+
 
 def main() -> None:
     """The main entry point to the application. Processes arguments passed by
     the user via the command line and calls the appropriate action function.
     """
 
-    actions = {'get': get_tasks,
-               'add': add_task,
-               'update': update_task,
-               'delete': delete_task,
-               'find': find_task}
+    actions = {'get': crud.get_tasks,
+               'add': crud.add_task,
+               'update': crud.update_task,
+               'delete': crud.delete_task,
+               'find': crud.find_task}
     action_names = [act for act in actions]
 
     parser = argparse.ArgumentParser(
-        description='TaskManager - manager for your tasks',
+        description='TaskManager allows you to manage your tasks',
     )
     parser.add_argument(
         'action',
@@ -25,21 +27,6 @@ def main() -> None:
     args = parser.parse_args()
 
     actions[args.action]()
-
-def get_tasks() -> None:
-    print('All tasks')
-
-def add_task() -> None:
-    print('Task added')
-
-def update_task() -> None:
-    print('Task updated')
-
-def delete_task() -> None:
-    print('Task deleted')
-
-def find_task() -> None:
-    print('Task finded')
 
 
 if __name__ == '__main__':
