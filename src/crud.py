@@ -1,18 +1,18 @@
-def get_tasks() -> None:
+def get_tasks(path: str) -> None:
     print('All tasks')
 
 
-def add_task() -> None:
+def add_task(path: str) -> None:
     print('Task added')
 
 
-def update_task() -> None:
+def update_task(path: str) -> None:
     print('Task updated')
 
 
-def delete_task() -> None:
+def delete_task(path: str) -> None:
     print('Task deleted')
 
 
-def find_task() -> None:
+def find_task(path: str) -> None:
     print('Task finded')
