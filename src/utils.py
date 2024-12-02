@@ -71,3 +71,11 @@ def init_new_storage(path: str) -> int:
     empty_state = StorageState(id_count=0, tasks=[])
     save_storage_state(path, empty_state)
     return empty_state['id_count']
+
+
+def get_task_index_by_id(id: int, tasks: list[Task]) -> int | None:
+    """Search task in list of tasks by it's ID."""
+    for i, task in enumerate(tasks):
+        if task.id == id:
+            return i
+    return None
