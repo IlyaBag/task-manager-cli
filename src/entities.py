@@ -2,9 +2,9 @@ from typing import TypedDict
 
 
 class Task:
-    def __init__(self, id: int, title: str, description: str, category: str,
+    def __init__(self, id: int | str, title: str, description: str, category: str,
                  due_date: str, priority: str, status: str) -> None:
-        self.id = id
+        self.id = int(id)
         self.title = title
         self.description = description
         self.category = category
