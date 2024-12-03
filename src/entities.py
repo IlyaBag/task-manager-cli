@@ -2,8 +2,9 @@ from typing import TypedDict
 
 
 class Task:
-    def __init__(self, id: int | str, title: str, description: str, category: str,
-                 due_date: str, priority: str, status: str) -> None:
+    def __init__(self, id: int | str, title: str, description: str,
+                 category: str, due_date: str, priority: str,
+                 status: str) -> None:
         self.id = int(id)
         self.title = title
         self.description = description
@@ -13,8 +14,8 @@ class Task:
         self.status = status
 
     def __str__(self) -> str:
-        return (f'[{self.id}] {self.title}. Срок: {self.due_date}. '
-                f'Статус: {self.status}.')
+        return (f'[{self.id}] {self.title}. Категория: {self.category}. '
+                f'Срок: {self.due_date}. Статус: {self.status}.')
 
     def __eq__(self, value: object) -> bool:
         if not isinstance(value, self.__class__):
