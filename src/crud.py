@@ -50,7 +50,10 @@ def add_task(path: str) -> None:
 
 
 def update_task(path: str) -> None:
-    """"""
+    """Prompt for the task ID and update the corresponding task with the entered
+    values. If the task is not found, display a corresponding message.
+    """
+
     id = int(input('Редактирование задачи. Введите ID задачи, которую '
                    'необходимо изменить: '))
     storage = utils.get_storage_state(path)
