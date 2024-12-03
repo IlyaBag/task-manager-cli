@@ -1,4 +1,5 @@
 import csv
+import datetime
 
 from src.entities import StorageState, Task
 
@@ -79,3 +80,13 @@ def get_task_index_by_id(id: int, tasks: list[Task]) -> int | None:
         if task.id == id:
             return i
     return None
+
+
+def is_valid_date(date: str) -> bool:
+    """Check the date for compliance with the ISO format 'YYYY-MM-DD'."""
+    try:
+        datetime.date.fromisoformat(date)
+    except ValueError:
+        return False
+    return True
+

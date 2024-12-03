@@ -28,6 +28,9 @@ def add_task(path: str) -> None:
     category = input('[3/5] Категория: ')
     due_date = input('[4/5] Дата окончания срока выполнения задачи в формате '
                      'ГГГГ-ММ-ДД: ')
+    while not utils.is_valid_date(due_date):
+        due_date = input('Некорректная дата. Введите дату в формате '
+                         'ГГГГ-ММ-ДД, например 2024-12-31: ')
     priority = input('[5/5] Приоритет: ')
     status = 'Не выполнена'
     id = utils.get_id_for_new_task(path)
@@ -76,6 +79,9 @@ def update_task(path: str) -> None:
             or task.category
         task.due_date = input(f'[4/5] Дата окончания ({task.due_date}): ') \
             or task.due_date
+        while not utils.is_valid_date(task.due_date):
+            task.due_date = input('Некорректная дата. Введите дату в формате '
+                            'ГГГГ-ММ-ДД, например 2024-12-31: ')
         task.priority = input(f'[5/5] Приоритет ({task.priority}): ') \
             or task.priority
 
