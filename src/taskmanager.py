@@ -24,7 +24,11 @@ def main() -> None:
         help=f'Select one of the available actions: {', '.join(action_names)}',
         metavar='action',
     )
-    parser.add_argument('-f', '--file', default='tasks.csv', help='Set path to storage file. Defaults to "tasks.csv"')
+    parser.add_argument(
+        '-f', '--file',
+        default='tasks.csv',
+        help='Set path to the storage file. Defaults to "tasks.csv"'
+    )
     args = parser.parse_args()
 
     actions[args.action](args.file)
