@@ -3,7 +3,7 @@ from src.entities import Task
 
 
 def get_tasks(path: str) -> None:
-    """Show tasks saved in storage. Allow you to sort tasks by category."""
+    """Show tasks saved in storage. Allow you to filter tasks by category."""
 
     category = input(
         'Поиск по категории (оставьте поле пустым чтобы показать все задачи): '
