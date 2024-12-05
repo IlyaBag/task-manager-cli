@@ -31,7 +31,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    actions[args.action](args.file)
+    print(actions[args.action](args.file))
 
 
 if __name__ == '__main__':
