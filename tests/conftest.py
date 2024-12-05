@@ -19,9 +19,10 @@ def create_test_storage() -> Generator[str, None, None]:
     """
 
     test_data = [
-        '0123id,title,description,category,due_date,priority,status\n',
+        '0003id,title,description,category,due_date,priority,status\n',
         '1,Изучить основы FastAPI,Пройти документацию по FastAPI и создать простой проект,Обучение,2024-11-30,Высокий,Не выполнена\n',
         '2,Изучить основы Django,Пройти документацию по Django и создать простой проект,Обучение,2024-07-20,Высокий,Не выполнена\n',
+        '3,Сварить суп,Нужно приготовить обед,Кулинария,2024-11-22,Обычный,Выполнена\n',
     ]
     with open(PATH_TO_TEST_FILE, 'w') as f:
         f.writelines(test_data)
