@@ -31,7 +31,7 @@ def create_test_storage() -> Generator[str, None, None]:
 
 @pytest.fixture
 def create_test_tasks() -> tuple[Task, Task]:
-    """Create two different Task objects."""
+    """Create three different Task objects."""
     task1 = Task(
         id=1,
         title='Изучить основы FastAPI',
@@ -50,4 +50,13 @@ def create_test_tasks() -> tuple[Task, Task]:
         priority='Высокий',
         status='Не выполнена'
     )
-    return task1, task2
+    task3 = Task(
+        id=3,
+        title='Сварить суп',
+        description='Нужно приготовить обед',
+        category='Кулинария',
+        due_date='2024-11-22',
+        priority='Обычный',
+        status='Выполнена'
+    )
+    return task1, task2, task3
